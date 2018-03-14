@@ -1,0 +1,12 @@
+# TODO: unfinished
+Vagrant.configure(2) do |config|
+  config.vm.box = "ubuntu/trusty64"
+  config.vm.provision :shell, path: "bootstrap.sh"
+  config.vm.network :forwarded_port, guest: 2181, host: 2181, auto_correct: true
+  config.vm.network :forwarded_port, guest: 9092, host: 9092, auto_correct: true
+  config.vm.provider "virtualbox" do |v|
+    v.memory = 2048
+    v.cpus = 1
+    v.name = "Kafka-Cluster"
+  end
+end
