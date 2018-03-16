@@ -19,7 +19,7 @@ BaritoLog is an application where a user comes and registers his new application
 	d. zookeeper, kafka, elastic search and kibana are provisioned as LXC containers or VMs depending on nomad configuration
 
 4. Management UI on BaritoLog
-	a. when user logs into BaritoMarket again, then he is presented with his configured applications and their web view end points for example if its auth service it will be auth.logging.gopay.co.id
+	a. when user logs into BaritoMarket again, then he is presented with his configured applications and their web view end points for example if its auth service it will be auth.<name>.co.id
 	b. Also, we display on the managemnet page - the size of logs, how many logs per second being consumed and end points for that specific applciation.
 
 5. Admin UI
