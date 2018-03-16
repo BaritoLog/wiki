@@ -1,0 +1,49 @@
+
+BaritoLog is an application where a user comes and registers his new application, this should provide user with folowing features
+
+1. Self register application
+	a. User puts new application name
+	b. defines the TPS or chooses from small, medium or large instance
+	c. define application group - if there is no group then we should allow user to create a group
+	d. once user provides the information we should display two things to user - application secret, client end point
+	e. We will also define templates for small, medium and large instances, so that we can automatically provision those using templates on terraform/chef
+
+2. Logging
+	a. user then configures his fluentd plugin with the client secret we speficified - and points fluentd with our plugin to client end point
+	b. at this moment, fluentd with our plugin starts sending the data to client end point
+
+3. Provisioning infrastructure
+	a. for provisioning infrastructure - our BaritoMarket app put the message to provisioner which creates the infrastructure
+	b. it creates appropriate number of zookeepers, kafka and sizable elastic search, it also creates the kibana which points to this elastic search
+	c. these infrastructure components are always created within kubernetes + lxc combination, the flow agent which reads from kafka lives inside kubernetes
+	d. zookeeper, kafka, elastic search and kibana are provisioned as LXC containers or VMs depending on nomad configuration
+
+4. Management UI on BaritoLog
+	a. when user logs into BaritoMarket again, then he is presented with his configured applications and their web view end points for example if its auth service it will be auth.logging.gopay.co.id
+	b. Also, we display on the managemnet page - the size of logs, how many logs per second being consumed and end points for that specific applciation.
+
+5. Admin UI
+	a. BaritoMarket will have admin UI as well, which is for administration purpose only, where we see what instances are registered for what purposes
+	b. These instances and their administration will be done using Chef/Terraform - we will poll those and put it under specific application.
+
+
+BaritoLog Pages
+
+1. LoginPage - device/cancancan
+2. Self register application page
+3. Application group page
+4. Application status page - which show log status etc
+5. Application logging page - kibana
+6. Application adminsitration page - shows the status of nodes etc.
+
+BaritoLog Flow
+
+1. fluentd plugin
+2. fluentd receiver
+3. receiver putting data in kafka
+4. kafka - baritoflow -> elastic search
+5. elastic search -> kibana
+
+BaritoLog Server 
+
+1. when you want to xtail - baritotail - you actually talk to baritoserver which in turn talks to kafka, and gives you stream directly so that for live debugging you don't have to look at elasticsearch.
