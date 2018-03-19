@@ -14,6 +14,13 @@ sudo dpkg -i elasticsearch-1.4.4.deb
 
 #enable on bootup
 sudo update-rc.d elasticsearch defaults 95 10
+
+# sudo rm /etc/elasticsearch/
+# sudo /bin/cat <<EOM >/etc/elasticsearch
+# dataDir=/tmp/zookeeper
+# clientPort=2181
+# maxClientCnxns=0
+# EOM
  
 ### Start ElasticSearch 
 sudo /etc/init.d/elasticsearch start
