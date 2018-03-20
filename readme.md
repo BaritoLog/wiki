@@ -15,7 +15,7 @@ Terms that used in this project:
 - `Flow` = both receiver and forwarder
 - `Stream` = kafka with its receiver
 
-Please check our [illustration](illustration/readme.md) and [original requirement](original_requirement)
+Please check our [illustration](illustration/readme.md) and [original requirement](original_requirement.txt)
 
 ## Philosophy
 
@@ -53,6 +53,6 @@ Barito Market (Rails)
 - Ruby On Rail 
 - Go
 
-## Get Started
+## Getting Started
 
-(On Progress..)
+- [Getting started for development](getting-started-dev.md)
