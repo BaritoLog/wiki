@@ -15,7 +15,7 @@ Terms that used in this project:
 - `Flow` = both receiver and forwarder
 - `Stream` = kafka with its receiver
 
-Please check our [illustration](illustration/readme.md) and [original requirement](original_requirement.txt)
+Please check our [illustration](illustrations/readme.md) and [original requirement](original_requirement.txt)
 
 ## Philosophy
 
