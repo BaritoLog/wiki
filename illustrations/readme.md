@@ -9,4 +9,6 @@
 ![alt text](5-log-data-may-needed-by-other-service.png)
 ![alt text](6-multiple-kafka-multiple-elasticsearch.png)
 ![alt text](7-logs-are-flowing-through-receiver-and-forwarder.png)
-![alt text](8-a-lot-have-to-set-up.png)
+![alt text](8-log-adaptation.png)
+![alt text](9-barito-convert-logs-to-timber-in-behind.png)
+![alt text](10-a-lot-have-to-set-up.png)
