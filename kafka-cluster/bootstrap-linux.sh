@@ -17,8 +17,10 @@ wget $INSTALLER_URL
 sudo mkdir $DEST
 sudo tar xvzf $INSTALLER_FILE -C $DEST
 
-sudo rm -rf $DEST/$INSTALLER_NAME/config # remove default config to avoid misleading
-
+# remove default config to avoid misleading
+sudo rm -rf $DEST/$INSTALLER_NAME/config/service.properties 
+sudo rm -rf $DEST/$INSTALLER_NAME/config/zookeeper.properties
+ 
 sudo mkdir $DEST/config
 /bin/cat <<EOM >$ZOOKEEPER_PROPERTIES
 dataDir=/tmp/zookeeper
@@ -29,6 +31,7 @@ EOM
 
 # Server Basics
 broker.id=0
+delete.topic.enable=true 
 
 # Socket Server Settings
 advertised.host.name=0.0.0.0
