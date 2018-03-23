@@ -11,4 +11,5 @@
 ![alt text](7-logs-are-flowing-through-receiver-and-forwarder.png)
 ![alt text](8-log-adaptation.png)
 ![alt text](9-barito-convert-logs-to-timber-in-behind.png)
-![alt text](10-a-lot-have-to-set-up.png)
+![alt text](10-anatomy-of-timber.png)
+![alt text](11-a-lot-have-to-set-up.png)
