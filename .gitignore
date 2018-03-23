@@ -1,2 +1,4 @@
 .vagrant
 nohup.out
+fluent
+fluent.conf
