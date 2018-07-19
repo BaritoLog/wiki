@@ -1,111 +1,39 @@
 # Barito Log
 
+![Timber Rafting in Barito River](_images/0-timber-rafting-in-barito-river.jpg)
+
 The Barito Log project is aimed at making logs management simpler by developing interface for provisioning, managing, and monitoring elastic stacks. 
-
-## What's in a name?
-
-![Timber Rafting in Barito River](images/0-timber-rafting-in-barito-river.jpg)
 
 The project name is inspired by timber rafting, which is a log transportation method in which logs are tied together into rafts and drifted or pulled across a water body or down a river. Barito is name of big river located in South Kalimantan, Indonesia. 
 
-## Why?
+## Introduction
+Logs infrastructure ain't scale
+![image](_images/1-logs-infra-aint-scale.png)
 
-![1-logging-in-microservices](images/1-logging-in-microservices.svg)
-![2-spreaded-logs](images/2-spreaded-logs.svg)
+Divide and conquer. With many logs cluster, how service know its logs cluster?
+![image](_images/2-service-dont-know-its-cluster.png)
 
-# Overview
+Router help service to discover the logs cluster. Router will communicate with Market to get application and logs cluster information.
+![image](_images/3-router-help.png)
 
-![3-barito-schema](images/3-barito-schema.svg)
-![4-barito-componets](images/4-barito-componets.svg)
+Market is user interface web portal where user can request or get the information. But to access the actual logs cluster, router is the guy. 
+![image](_images/4-market-provision-the-cluster.png)
 
-## Forwarding Strategy
 
-![5-logs-are-flowing-through-receiver-and-forwarder](images/5-logs-are-flowing-through-receiver-and-forwarder.svg)
-![6-kafka-is-preventing-data-loss](images/6-kafka-is-preventing-data-loss.svg)
-![7-logs-data-may-needed-by-other-services](images/7-logs-data-may-needed-by-other-services.svg)
+## Overview
+![image](_images/6-barito-overview.png)
+![image](_images/5-inside-the-cluster.png)
 
-## Web Portal
+## Provisioning
 
-![8-people-are-gathering-in-the-market](images/8-people-are-gathering-in-the-market.svg)
+N/A
 
 ## Service Discovery
 
-![9-multiple-kafka-multiple-elasticsearch](images/9-multiple-kafka-multiple-elasticsearch.svg)
-![10-components-are-discovering each-others](images/10-components-are-discovering each-others.svg)
+![image](_images/7-producer-router.png)
+![image](_images/8-kibana-router.png)
 
-Strategy: Consul/Yggrasill (On Progress/On Discussion)
+## Log Forwarding
 
-## Timber
-
-![11-logs-is-adapt](images/11-logs-is-adapt.svg)
-![12-barito-convert-logs-to-timber-in-behind](images/12-barito-convert-logs-to-timber-in-behind.svg)
-
-Timber is abstract model to logs data. 
-
-Anatomy of Timber: 
-1. `location`
-2. `tag`
-3. `@message` Log message
-4. `@timestamp` Time when log created
-4. `client_trail`
-5. `receiver_trail`
-6. `forwarder_trail`
-
-Timber in json
-```json
-{
-  "location": "some-topic",
-  "tag": "barito",
-  "@message": "qwerijsdfvx",
-  "@timestamp": "2018-04-03T07:41:17Z",
-  "client_trail": {
-    "is_k8s": false,
-    "sent_at": "2018-04-03T07:41:17Z",
-    "hints": []
-  },
-  "receiver_trail": {
-    "url_path": "/str/1/st/2/fw/3/cl/4/produce/some-topic",
-    "received_at": "2018-04-03T07:41:17Z",
-    "hints": []
-  },
-  "forwarder_trail": {
-    "forwarded_at": "",
-    "hints": []
-  }
-}
-```
-
-If `@message` is empty, client/receiver/forwarder will try to recovery it and give a hint. 
-
-If `@timestamp` is empty, client/receiver/forwarder will try to recovery it and give a hint. 
-
-All field related time (`@timestamp`, `sent_at`, `received_at`, `forwarded_at`) will save as `string`, `UTC` and `RFC3339` as the format. 
-
-
-
-## Provisioning 
-
-![13-a-lot-have-to-set-up](images/13-a-lot-have-to-set-up.svg)
-
-
-Strategy: Terraform with chef(On Progress/On Discussion)
-
-
-## Stream Processing
-
-![14-stream-processor](images/14-stream-processor.svg)
-
-## Projects 
-
-- BaritoMarket: https://github.com/BaritoLog/BaritoMarket
-- barito-flow: https://github.com/BaritoLog/barito-flow
-- Barito-Fluent-Plugin: https://github.com/BaritoLog/Barito-Fluent-Plugin
-
-## Tech Stacks
-
-- Ruby On Rail 
-- Go
-
-## Getting Started
-
-- [Getting started for development](getting-started-dev.md)
+![image](_images/9-logs-journey.png)
+![image](_images/10-logs-and-events.png)
