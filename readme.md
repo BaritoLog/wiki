@@ -36,4 +36,6 @@ N/A
 ## Log Forwarding
 
 ![image](_images/9-logs-journey.png)
+
+Consumer service will subscribe to `new_topic_events` to spawn new logs worker.
 ![image](_images/10-logs-and-events.png)
