@@ -1,5 +1,7 @@
 # Barito Log
 
+> To get started quickly, please consult our quick development setup [here](https://github.com/BaritoLog/BaritoMarket)
+
 ![Timber Rafting in Barito River](_images/0-timber-rafting-in-barito-river.jpg)
 
 The Barito Log project is aimed at making logs management simpler by developing interface for provisioning, managing, and monitoring elastic stacks. 
