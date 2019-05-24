@@ -4,9 +4,9 @@
 
 ![Timber Rafting in Barito River](_images/0-timber-rafting-in-barito-river.jpg)
 
-The Barito Log project is aimed at making logs management simpler by developing platform for provisioning, managing, and monitoring logging pipeline cluster. 
+The Barito Log project aimed at making logs management simpler by developing a platform for provisioning, managing, and monitoring logging infrastructures.
 
-The project name is inspired by timber rafting, which is a log transportation method in which logs are tied together into rafts and drifted or pulled across a water body or down a river. Barito is name of a big river located in South Kalimantan, Indonesia. 
+The project name is inspired from timber rafting, a log transportation method in which logs are tied together into rafts and drifted or pulled across a body of water or down a river. Barito is the name of a big river located in South Kalimantan, Indonesia.
 
 Read the story behind Barito [here](https://blog.gojekengineering.com/how-we-built-barito-to-enhance-logging-19f80b89496f)
 
